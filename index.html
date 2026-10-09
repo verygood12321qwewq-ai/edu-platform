@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f8fc">
-  <title>밤티 — 오늘의 학습</title>
+  <title>스쿨탭 — 오늘의 학습</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
   <section class="login-screen" id="loginScreen" aria-labelledby="loginTitle" hidden>
     <div class="login-card">
-      <a class="brand login-brand" href="#"><span class="brand-mark">밤</span><span>밤티</span></a>
+      <a class="brand login-brand" href="#"><span class="brand-mark">밤</span><span>스쿨탭</span></a>
       <p class="eyebrow">YOUR STUDY SPACE</p>
       <h1 id="loginTitle">다시 만나서 반가워요</h1>
       <p class="login-subtitle">로그인하고 나만의 학습을 이어가세요.</p>
@@ -32,7 +32,7 @@
   </section>
   <section class="onboarding" id="onboarding" aria-labelledby="onboardingTitle" hidden>
     <div class="onboarding-card">
-      <a class="brand onboarding-brand" href="#home"><span class="brand-mark">밤</span><span>밤티</span></a>
+      <a class="brand onboarding-brand" href="#home"><span class="brand-mark">밤</span><span>스쿨탭</span></a>
       <div class="onboarding-progress"><i></i><i></i><i></i></div>
       <p class="eyebrow">YOUR LEARNING PROFILE</p>
       <h1 id="onboardingTitle">나에게 맞는 공부를<br>시작해볼까요?</h1>
@@ -49,7 +49,7 @@
     </div>
   </section>
   <section class="textbook-browser" id="textbookBrowser" hidden aria-labelledby="textbookBrowserTitle">
-    <div class="textbook-browser-top"><button class="back-button" id="closeTextbookBrowser" type="button">← 학습 정보로 돌아가기</button><span class="brand" aria-label="밤티 교과서관"><span class="brand-mark">밤</span><span>밤티 교과서관</span></span><span class="browser-top-caption">교과서 자료 찾기</span></div>
+    <div class="textbook-browser-top"><button class="back-button" id="closeTextbookBrowser" type="button">← 학습 정보로 돌아가기</button><span class="brand" aria-label="스쿨탭 교과서관"><span class="brand-mark">밤</span><span>스쿨탭 교과서관</span></span><span class="browser-top-caption">교과서 자료 찾기</span></div>
     <div class="textbook-browser-hero"><div class="browser-hero-mark">책</div><div><p class="eyebrow">TEXTBOOK EXPLORER</p><h1 id="textbookBrowserTitle">내 교과서 자료 찾기</h1><p>교과서 표지와 책 이름을 확인한 뒤, 내 교과서로 직접 선택해 학습에 연결해요.</p></div><a class="aidt-link" href="https://www.aidtshow.kr/" target="_blank" rel="noopener">AI 디지털 교육자료 웹전시관 ↗</a></div>
     <div class="browser-level-tabs" id="pickerLevelTabs" role="group" aria-label="학교급"></div>
     <div class="browser-filters-top"><div class="browser-filter-group"><strong>과목</strong><div id="pickerSubjectTabs" class="picker-chip-list"></div></div><div class="browser-filter-group"><strong>학년</strong><div id="pickerGradeTabs" class="picker-chip-list"></div></div></div><p class="picker-profile-note" id="pickerProfileNote"></p>
@@ -57,7 +57,7 @@
   </section>
   <div class="app-shell" hidden>
     <aside class="sidebar" aria-label="주 메뉴">
-      <a class="brand" href="#home" aria-label="밤티 홈"><span class="brand-mark">밤</span><span>밤티</span></a>
+      <a class="brand" href="#home" aria-label="스쿨탭 홈"><span class="brand-mark">밤</span><span>스쿨탭</span></a>
       <div class="side-label">학습 공간</div>
       <nav class="main-nav">
         <a class="nav-item active" href="#home"><span class="nav-icon">⌂</span>오늘의 학습</a>
@@ -130,18 +130,18 @@
           <div class="note-highlight"><span class="note-subject">수학 · 일차함수</span><h3>기울기와 y절편<br>구분하기</h3><p>틀린 문제 3개가 기다리고 있어요.</p><button class="review-button" id="reviewBtn">오답 다시 풀기 <span>↗</span></button><span class="note-decoration">✳</span></div>
         </aside>
       </section>
-      <footer>밤티 <span>·</span> 배움은 매일 조금씩 자라나요.</footer>
+      <footer>스쿨탭 <span>·</span> 배움은 매일 조금씩 자라나요.</footer>
     </main>
   </div>
   <div class="toast" role="status" aria-live="polite"></div>
   <section class="subject-page" id="subjectPage" hidden aria-labelledby="subjectPageTitle">
-    <div class="subject-page-top"><button class="back-button" id="subjectBack" type="button">← 오늘의 학습</button><span class="page-brand">밤티</span></div>
+    <div class="subject-page-top"><button class="back-button" id="subjectBack" type="button">← 오늘의 학습</button><span class="page-brand">스쿨탭</span></div>
     <header class="subject-page-header"><p class="eyebrow">EXPLORE SUBJECTS</p><h1 id="subjectPageTitle">과목 둘러보기</h1><p id="subjectPageSubtitle">학교급과 학년에 맞는 과목을 골라 학습을 이어가요.</p></header>
     <div class="subject-tools"><label class="subject-search">⌕ <input id="subjectSearch" type="search" placeholder="과목 검색" aria-label="과목 검색"></label><label class="add-subject-control"><select id="addSubjectSelect" aria-label="추가할 과목"><option value="">과목 추가하기</option></select><button id="addSubjectButton" type="button">추가</button></label><a id="publisherSourceLink" class="publisher-source-link" href="https://www.ktbook.com/user/e-data/info/education/edu00.do" target="_blank" rel="noopener">교과서 정보 출처 ↗</a></div>
     <div class="subject-page-content"><div class="subject-page-grid" id="subjectPageGrid"></div><aside class="subject-detail panel" id="subjectDetail"><p class="eyebrow">CHOOSE A SUBJECT</p><h2>공부할 과목을 선택해 주세요</h2><p>과목을 선택하면 추천 단원과 학습을 시작할 수 있어요.</p></aside></div>
   </section>
   <section class="notes-page" id="notesPage" hidden aria-labelledby="notesPageTitle">
-    <div class="subject-page-top"><button class="back-button" id="notesBack" type="button">← 오늘의 학습</button><span class="page-brand">밤티</span></div>
+    <div class="subject-page-top"><button class="back-button" id="notesBack" type="button">← 오늘의 학습</button><span class="page-brand">스쿨탭</span></div>
     <header class="subject-page-header"><p class="eyebrow">MY WRONG ANSWER NOTE</p><h1 id="notesPageTitle">나의 오답노트</h1><p>틀린 문제와 헷갈린 내용을 적어두고 다시 확인해요.</p></header>
     <div class="notes-page-layout"><form class="panel note-form" id="noteForm"><h2>오답 메모 추가하기</h2><label for="noteSubject">과목</label><select id="noteSubject" required></select><label for="noteTitle">문제나 단원</label><input id="noteTitle" maxlength="70" placeholder="예: 일차함수의 y절편" required><label for="noteBody">왜 틀렸는지 / 다시 기억할 내용</label><textarea id="noteBody" maxlength="500" rows="5" placeholder="내가 헷갈린 부분과 다음에 기억할 점을 적어보세요." required></textarea><button class="primary-button" type="submit">오답 저장하기 <span>→</span></button></form><div class="notes-list-wrap"><div class="notes-list-heading"><h2>저장한 오답</h2><span id="noteTotal">0개</span></div><div id="notesList" class="notes-list"></div></div></div>
   </section>
