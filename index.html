@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>밤티 — 오늘의 학습</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="login-screen" id="loginScreen" aria-labelledby="loginTitle" hidden>
+    <div class="login-card">
+      <a class="brand login-brand" href="#"><span class="brand-mark">밤</span><span>밤티</span></a>
+      <p class="eyebrow">YOUR STUDY SPACE</p>
+      <h1 id="loginTitle">다시 만나서 반가워요</h1>
+      <p class="login-subtitle">로그인하고 나만의 학습을 이어가세요.</p>
+      <form id="loginForm" class="login-form">
+        <label for="loginEmail">이메일</label>
+        <input id="loginEmail" type="email" autocomplete="username" placeholder="name@example.com" required>
+        <label for="loginPassword">비밀번호</label>
+        <input id="loginPassword" type="password" autocomplete="current-password" placeholder="비밀번호를 입력해 주세요" required>
+        <button type="submit" class="login-submit">로그인</button>
+      </form>
+      <p id="loginNotice" class="login-notice" role="status" aria-live="polite">실제 계정 인증은 아직 연결되지 않았어요. 입력한 정보는 저장하거나 전송하지 않습니다.</p>
+      <div class="login-divider"><span>또는</span></div>
+      <button type="button" class="demo-login" id="demoLogin">체험 모드로 시작하기 <span>→</span></button>
+      <p class="login-footnote">체험 모드는 이 브라우저에서 학습 화면을 미리 볼 수 있어요.</p>
+    </div>
+  </section>
+  <section class="onboarding" id="onboarding" aria-labelledby="onboardingTitle" hidden>
+    <div class="onboarding-card">
+      <a class="brand onboarding-brand" href="#home"><span class="brand-mark">밤</span><span>밤티</span></a>
+      <div class="onboarding-progress"><i></i><i></i><i></i></div>
+      <p class="eyebrow">YOUR LEARNING PROFILE</p>
+      <h1 id="onboardingTitle">나에게 맞는 공부를<br>시작해볼까요?</h1>
+      <p class="onboarding-sub">학습 정보를 알려주면 맞춤 과목과 목표를 준비할게요.</p>
+      <form id="profileForm">
+        <div class="form-section"><label class="form-label">학교급을 선택해 주세요</label><div class="choice-row school-levels"><label class="choice-card"><input type="radio" name="level" value="초등학교" required><span>🌱</span><b>초등학교</b></label><label class="choice-card"><input type="radio" name="level" value="중학교"><span>🌿</span><b>중학교</b></label><label class="choice-card"><input type="radio" name="level" value="고등학교"><span>🌳</span><b>고등학교</b></label></div></div>
+        <div class="form-columns"><div class="form-section"><label class="form-label" for="schoolName">학교 이름 <small>선택</small></label><div class="school-verify-row"><input class="onboarding-input" id="schoolName" name="school" maxlength="40" placeholder="예: 배움중학교"><button id="verifySchool" type="button" class="school-verify-button">학교 확인</button></div><p id="schoolVerifyStatus" class="school-verify-status" aria-live="polite">학교 이름을 입력하고 실제 학교인지 확인해 보세요.</p><div id="schoolVerifyResults" class="school-verify-results" aria-live="polite"></div></div><div class="form-section"><label class="form-label" for="gradeSelect">학년</label><select class="onboarding-input" id="gradeSelect" name="grade" required><option value="">학교급을 먼저 선택해 주세요</option></select></div></div>
+        <div class="form-section"><label class="form-label">공부할 과목을 골라 주세요 <small>여러 개 선택 가능</small></label><div class="choice-row subject-choices" id="subjectChoices"><span class="choice-hint">학교급과 학년을 선택하면 과목이 표시돼요.</span></div></div>
+        <div class="form-section publisher-section"><label class="form-label">내 교과서를 확인해 주세요 <small>교과서 표지의 출판사·책 이름을 보고 과목별로 확인해요</small></label><div id="publisherFields" class="publisher-fields"><span class="choice-hint">과목을 고르면 교과서를 확인할 수 있어요.</span></div><p class="publisher-source-note">학교 이름만으로 출판사를 자동 확정하지 않아요. 같은 학교에서도 과목·학년·반에 따라 교과서가 다를 수 있으니, 표지 또는 책 이름을 보고 <strong>내 교과서 확인하기</strong>를 눌러 주세요. 공개 교과서 목록 예시: <a href="https://hwajung-m.goegy.kr/dext5editordata/2025/12/20251230_163059309_40404.pdf" target="_blank" rel="noopener">화정중 2026학년도</a>, <a href="https://bcilsin-m.goebc.kr/upload/bcilsin-m/na/bbs_4373/2025/03/69FA7505-6B38-F544-706E-DC2831745B29.pdf" target="_blank" rel="noopener">백신일신중 2025학년도</a>.</p></div>
+        <div class="form-section"><label class="form-label" for="goalScore">목표 점수 <small>과목별로 설정할 수 있어요</small></label><div id="goalScoreFields" class="goal-score-fields"><span class="choice-hint">과목을 고르면 목표 점수를 설정할 수 있어요.</span></div></div>
+        <button class="onboarding-submit" type="submit">내 학습 시작하기 <span>→</span></button>
+        <p class="onboarding-note">학교 이름은 선택 항목이며, 입력하지 않아도 이용할 수 있어요.</p>
+      </form>
+    </div>
+  </section>
+  <section class="textbook-browser" id="textbookBrowser" hidden aria-labelledby="textbookBrowserTitle">
+    <div class="textbook-browser-top"><button class="back-button" id="closeTextbookBrowser" type="button">← 학습 정보로 돌아가기</button><span class="brand" aria-label="밤티 교과서관"><span class="brand-mark">밤</span><span>밤티 교과서관</span></span><span class="browser-top-caption">교과서 자료 찾기</span></div>
+    <div class="textbook-browser-hero"><div class="browser-hero-mark">책</div><div><p class="eyebrow">TEXTBOOK EXPLORER</p><h1 id="textbookBrowserTitle">내 교과서 자료 찾기</h1><p>교과서 표지와 책 이름을 확인한 뒤, 내 교과서로 직접 선택해 학습에 연결해요.</p></div><a class="aidt-link" href="https://www.aidtshow.kr/" target="_blank" rel="noopener">AI 디지털 교육자료 웹전시관 ↗</a></div>
+    <div class="browser-level-tabs" id="pickerLevelTabs" role="group" aria-label="학교급"></div>
+    <div class="browser-filters-top"><div class="browser-filter-group"><strong>과목</strong><div id="pickerSubjectTabs" class="picker-chip-list"></div></div><div class="browser-filter-group"><strong>학년</strong><div id="pickerGradeTabs" class="picker-chip-list"></div></div></div><p class="picker-profile-note" id="pickerProfileNote"></p>
+    <div class="textbook-browser-layout"><aside class="textbook-filter-panel"><details open><summary>학기</summary><div id="pickerSemesterFilters" class="picker-semesters"></div></details><details open><summary>출판사</summary><div id="pickerPublisherFilters" class="picker-publishers"></div></details></aside><div class="textbook-results"><div class="textbook-results-heading"><div><p class="eyebrow">TEXTBOOK COLLECTION</p><h2 id="pickerResultsTitle">교과서 목록</h2></div><label class="picker-search">⌕ <input id="pickerSearch" type="search" placeholder="교재명·저자 검색" aria-label="교재명 또는 저자 검색"></label></div><div class="picker-results-meta"><span id="pickerCount">목록을 불러오는 중이에요.</span><span id="pickerActiveFilters"></span></div><div id="pickerBookCards" class="picker-book-cards"></div><div class="picker-book-select" id="pickerBookSelectWrap" hidden><label for="pickerBookSelect"><strong>교재 이름 빠르게 고르기</strong><select id="pickerBookSelect" aria-label="출판사별 교재 이름 선택"><option value="">교재 이름 선택</option></select></label><button id="pickerBookChoose" type="button" disabled>내 교과서 확인 →</button></div><div class="picker-manual panel" id="pickerManual"><div><strong>목록에서 책을 찾지 못했나요?</strong><p>교과서에 적힌 책 이름과 저자를 입력한 뒤 확인해 주세요.</p></div><input id="pickerCustomPublisher" type="text" maxlength="60" placeholder="출판사 이름" aria-label="직접 입력할 출판사 이름" hidden><input id="pickerManualTitle" type="text" maxlength="100" placeholder="예: 중학 국어 1 (저자명)" aria-label="직접 입력할 교과서 이름과 저자"><button id="pickerManualSave" type="button">내 교과서 확인하기</button></div><p class="picker-source-note">교재 정보와 학습 목차는 출판사·학년·과목에 따라 달라요. 확인된 교과서만 맞춤 학습에 사용합니다.</p></div></div>
+  </section>
+  <div class="app-shell" hidden>
+    <aside class="sidebar" aria-label="주 메뉴">
+      <a class="brand" href="#home" aria-label="밤티 홈"><span class="brand-mark">밤</span><span>밤티</span></a>
+      <div class="side-label">학습 공간</div>
+      <nav class="main-nav">
+        <a class="nav-item active" href="#home"><span class="nav-icon">⌂</span>오늘의 학습</a>
+        <a class="nav-item" href="#subjects" data-page="subjects"><span class="nav-icon">▦</span>과목 둘러보기</a>
+        <a class="nav-item" href="#notes" data-page="notes"><span class="nav-icon">▤</span>나의 오답노트 <span class="nav-count" id="wrongCount">0</span></a>
+        <a class="nav-item" href="#progress" data-page="report"><span class="nav-icon">◷</span>학습 리포트</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card" id="helpCard" role="button" tabindex="0"><span class="help-spark">✳</span><strong>막히는 부분이 있나요?</strong><p>개념부터 차근차근<br>다시 살펴봐요.</p><a href="#subjects" id="helpLink">개념 찾아보기 <span>↗</span></a></div>
+        <button class="profile" id="editProfile" type="button"><span class="avatar" id="profileAvatar">학</span><span class="profile-copy"><strong id="profileName">학생</strong><small id="profileSchool">학습 정보 설정</small></span><span class="dots">···</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="home">
+      <header class="topbar">
+        <div class="breadcrumbs">나의 학습 <span>/</span> <strong id="breadcrumbCurrent">오늘의 학습</strong></div>
+        <div class="top-actions"><button class="icon-button" aria-label="알림">♧<i></i></button><span class="top-divider"></span><span class="date-label">10월 7일 수요일</span><button class="logout-button" id="logoutButton" type="button">로그아웃</button></div>
+      </header>
+
+      <section class="welcome-row">
+        <div><p class="eyebrow">WEDNESDAY, OCTOBER 7</p><h1>안녕, <span id="welcomeName">학생</span> <span class="wave">✳</span></h1><p class="welcome-sub">오늘도 한 걸음씩, 네 속도로 배워봐요.</p></div>
+        <div class="streak-pill"><span class="flame">♨</span><span><strong>5일째 학습 중</strong><small>꾸준함이 실력이 돼요!</small></span><span class="streak-spark">✦</span></div>
+      </section>
+
+      <section class="hero-card" aria-label="오늘의 추천 학습">
+        <div class="hero-copy"><span class="hero-kicker"><span class="kicker-dot"></span> 오늘의 추천 학습</span><h2>개념을 알고 나면<br>문제가 쉬워져요</h2><p id="heroLesson">수학 · 일차함수의 그래프<br>핵심 개념을 10분 만에 정리해요.</p><button class="primary-button" id="startLearning" type="button">학습 시작하기 <span>→</span></button></div>
+        <div class="hero-art" aria-hidden="true"><div class="art-sun"></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-card card-back"><span>y = ax + b</span></div><div class="art-card card-front"><span class="tiny-tag">오늘의 개념</span><span class="graph"><i></i><i></i><i></i><i></i><b></b></span><span class="card-eq">y = 2x + 1</span></div><span class="art-star star-one">✳</span><span class="art-star star-two">✦</span><span class="art-dot"></span></div>
+        <div class="hero-pagination"><span class="current"></span><span></span><span></span></div>
+      </section>
+
+      <section class="stats-grid" id="progress" aria-label="학습 요약">
+        <article class="stat-card"><div class="stat-icon mint">◷</div><div class="stat-main"><span>이번 주 학습 시간</span><strong>4<span>시간</span> 20<span>분</span></strong><small class="positive">지난주보다 1시간 더 했어요!</small></div><div class="mini-chart" aria-hidden="true"><i style="height:28%"></i><i style="height:45%"></i><i style="height:38%"></i><i style="height:65%"></i><i style="height:52%"></i><i style="height:84%"></i><i class="today" style="height:68%"></i></div></article>
+        <button class="stat-card accuracy-stat-card" id="weeklyAccuracyCard" type="button" aria-controls="reportPanel" aria-label="이번 주 정답률 보기">
+          <span class="stat-icon peach" aria-hidden="true">◎</span>
+          <span class="stat-main"><span>이번 주 정답률</span><strong><span id="weeklyAccuracyValue">—</span><span>%</span></strong><small id="weeklyAccuracyChange">이번 주 풀이 기록이 없어요</small></span>
+          <span class="ring-wrap" aria-hidden="true"><span class="progress-ring" id="weeklyAccuracyRing"><span><span id="weeklyAccuracyRingValue">—</span><small>%</small></span></span></span>
+        </button>
+      </section>
+      <section class="report-panel panel" id="reportPanel" hidden><div class="panel-heading"><div><p class="eyebrow">YOUR LEARNING REPORT</p><h2>나의 학습 리포트</h2></div><span class="ai-badge">최근 기록</span></div><div class="report-summary" id="reportSummary"></div><div class="weekly-report" id="weeklyReport"></div></section>
+
+      <section class="exam-ai-grid" aria-label="시험 준비와 AI 약점 분석">
+        <article class="panel exam-panel">
+          <div class="panel-heading"><div><p class="eyebrow">EXAM COUNTDOWN</p><h2>다가오는 시험</h2></div><span class="exam-calendar">▦</span></div>
+          <form id="examForm" class="exam-form">
+            <label class="field-label" for="examName">시험 이름</label>
+            <input id="examName" name="examName" maxlength="30" placeholder="예: 2학기 중간고사" required>
+            <div class="exam-form-bottom"><label class="field-label" for="examDate">시험 날짜</label><input id="examDate" name="examDate" type="date" required><button class="small-primary" type="submit">시험 등록 <span>→</span></button></div>
+          </form>
+          <div id="examList" class="exam-list" aria-live="polite"></div>
+        </article>
+        <article class="panel ai-panel">
+          <div class="panel-heading"><div><p class="eyebrow">AI STUDY INSIGHT</p><h2>AI 약점 분석</h2></div><span class="ai-badge">✦ AI</span></div>
+          <div class="ai-insight" id="aiInsight" aria-live="polite"><div class="insight-icon">✳</div><div><span class="insight-label" id="aiInsightLabel">아직 분석 결과 없음</span><h3 id="aiInsightTitle">학습 기록을 AI로 분석해요</h3><p id="aiInsightSummary">문제 풀이 결과가 쌓이면 과목과 단원별로 약점을 찾아드려요.</p><p class="insight-next-step" id="aiInsightNext" hidden></p></div></div>
+          <div class="insight-footer"><span><i></i><span id="aiInsightMeta">문제를 풀면 분석을 시작할 수 있어요.</span></span><div class="insight-actions"><button id="runAiAnalysis" class="text-link" type="button" disabled>AI로 분석하기 ✦</button><button id="aiAction" class="text-link" type="button" disabled>맞춤 연습 보기 <span>→</span></button></div></div>
+          <small class="ai-privacy-note">AI 분석을 누르면 최근 풀이 기록이 AI로 전송됩니다.</small>
+        </article>
+      </section>
+
+      <section class="lower-grid">
+        <div class="panel subjects-panel" id="subjects">
+          <div class="panel-heading"><div><p class="eyebrow">KEEP LEARNING</p><h2>과목별로 이어서 공부해요</h2></div><a href="#subjects" class="text-link">전체 과목 보기 <span>→</span></a></div>
+          <div class="subject-list">
+            <button class="subject-row" data-subject="수학"><span class="subject-icon math">∑</span><span class="subject-info"><strong>수학</strong><small>중학교 2학년 · 일차함수</small></span><span class="subject-progress"><span><i style="width:68%"></i></span><small>68%</small></span><span class="row-arrow">→</span></button>
+            <button class="subject-row" data-subject="영어"><span class="subject-icon english">Aa</span><span class="subject-info"><strong>영어</strong><small>중학교 2학년 · Lesson 5</small></span><span class="subject-progress"><span><i style="width:42%"></i></span><small>42%</small></span><span class="row-arrow">→</span></button>
+            <button class="subject-row" data-subject="과학"><span class="subject-icon science">✳</span><span class="subject-info"><strong>과학</strong><small>중학교 2학년 · 물질의 특성</small></span><span class="subject-progress"><span><i style="width:25%"></i></span><small>25%</small></span><span class="row-arrow">→</span></button>
+          </div>
+        </div>
+        <aside class="panel notes-panel" id="notes">
+          <div class="panel-heading"><div><p class="eyebrow">QUICK REVIEW</p><h2>다시 풀어볼 문제</h2></div><a href="#notes" class="round-link" aria-label="오답노트 전체 보기">→</a></div>
+          <div class="note-highlight"><span class="note-subject">수학 · 일차함수</span><h3>기울기와 y절편<br>구분하기</h3><p>틀린 문제 3개가 기다리고 있어요.</p><button class="review-button" id="reviewBtn">오답 다시 풀기 <span>↗</span></button><span class="note-decoration">✳</span></div>
+        </aside>
+      </section>
+      <footer>밤티 <span>·</span> 배움은 매일 조금씩 자라나요.</footer>
+    </main>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <section class="subject-page" id="subjectPage" hidden aria-labelledby="subjectPageTitle">
+    <div class="subject-page-top"><button class="back-button" id="subjectBack" type="button">← 오늘의 학습</button><span class="page-brand">밤티</span></div>
+    <header class="subject-page-header"><p class="eyebrow">EXPLORE SUBJECTS</p><h1 id="subjectPageTitle">과목 둘러보기</h1><p id="subjectPageSubtitle">학교급과 학년에 맞는 과목을 골라 학습을 이어가요.</p></header>
+    <div class="subject-tools"><label class="subject-search">⌕ <input id="subjectSearch" type="search" placeholder="과목 검색" aria-label="과목 검색"></label><label class="add-subject-control"><select id="addSubjectSelect" aria-label="추가할 과목"><option value="">과목 추가하기</option></select><button id="addSubjectButton" type="button">추가</button></label><a id="publisherSourceLink" class="publisher-source-link" href="https://www.ktbook.com/user/e-data/info/education/edu00.do" target="_blank" rel="noopener">교과서 정보 출처 ↗</a></div>
+    <div class="subject-page-content"><div class="subject-page-grid" id="subjectPageGrid"></div><aside class="subject-detail panel" id="subjectDetail"><p class="eyebrow">CHOOSE A SUBJECT</p><h2>공부할 과목을 선택해 주세요</h2><p>과목을 선택하면 추천 단원과 학습을 시작할 수 있어요.</p></aside></div>
+  </section>
+  <section class="notes-page" id="notesPage" hidden aria-labelledby="notesPageTitle">
+    <div class="subject-page-top"><button class="back-button" id="notesBack" type="button">← 오늘의 학습</button><span class="page-brand">밤티</span></div>
+    <header class="subject-page-header"><p class="eyebrow">MY WRONG ANSWER NOTE</p><h1 id="notesPageTitle">나의 오답노트</h1><p>틀린 문제와 헷갈린 내용을 적어두고 다시 확인해요.</p></header>
+    <div class="notes-page-layout"><form class="panel note-form" id="noteForm"><h2>오답 메모 추가하기</h2><label for="noteSubject">과목</label><select id="noteSubject" required></select><label for="noteTitle">문제나 단원</label><input id="noteTitle" maxlength="70" placeholder="예: 일차함수의 y절편" required><label for="noteBody">왜 틀렸는지 / 다시 기억할 내용</label><textarea id="noteBody" maxlength="500" rows="5" placeholder="내가 헷갈린 부분과 다음에 기억할 점을 적어보세요." required></textarea><button class="primary-button" type="submit">오답 저장하기 <span>→</span></button></form><div class="notes-list-wrap"><div class="notes-list-heading"><h2>저장한 오답</h2><span id="noteTotal">0개</span></div><div id="notesList" class="notes-list"></div></div></div>
+  </section>
+  <section class="learning-modal" id="learningModal" hidden aria-modal="true" role="dialog" aria-labelledby="learningTitle"><div class="learning-dialog"><button class="modal-close" id="closeLearning" aria-label="닫기">×</button><p class="eyebrow" id="learningKicker">TODAY'S LESSON</p><h2 id="learningTitle">오늘의 학습</h2><div id="learningContent"></div><button class="primary-button" id="lessonContinue" type="button">다음 단계 <span>→</span></button></div></section>
+  <script src="app.js"></script>
+</body>
+</html>
